@@ -1,101 +1,183 @@
+"use client";
+
+import { gsap } from "gsap";
+import { useLayoutEffect } from "react";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 import Image from "next/image";
+import foto_de_perfil_profissional from "./public/foto_de_perfil_profissional.jpg";
+import { Tecnologias } from "./components/Tecnologias";
 
 export default function Home() {
-  return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-8 row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="list-inside list-decimal text-sm text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-semibold">
-              app/page.tsx
-            </code>
-            .
-          </li>
-          <li>Save and see your changes instantly.</li>
-        </ol>
+  gsap.registerPlugin(ScrollTrigger);
+  useLayoutEffect(() => {
+    gsap.fromTo(
+      ".textoInicial",
+      {
+        x: "-100%",
+        opacity: "0.3",
+      },
+      {
+        fontSize: "30px",
+        x: "0px",
+        opacity: "1",
+        duration: 1,
+      }
+    );
+  });
 
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:min-w-44"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
+  useLayoutEffect(() => {
+    gsap.fromTo(
+      ".textoApresentando",
+      {
+        opacity: "0.1",
+      },
+      {
+        opacity: "1",
+        paddingBottom: "2px",
+        scrollTrigger: {
+          trigger: ".textoApresentando",
+          start: "top 800px",
+          end: "bottom 500px",
+          scrub: true,
+          markers: false,
+        },
+      }
+    );
+  });
+
+  useLayoutEffect(() => {
+    gsap.fromTo(
+      ".explorar",
+      {
+        color: "red",
+        opacity: "0.3",
+      },
+      {
+        color: "yellow",
+        opacity: "1",
+        duration: 6,
+      }
+    );
+  });
+
+  useLayoutEffect(() => {
+    gsap.fromTo(
+      ".sobreMim",
+      {
+        opacity: "0.1",
+        x: "100%",
+      },
+      {
+        opacity: "1",
+        x: "0px",
+        paddingBottom: "2px",
+        scrollTrigger: {
+          trigger: ".sobreMim",
+          start: "top 800px",
+          end: "bottom 500px",
+          scrub: true,
+          markers: false,
+        },
+      }
+    );
+  });
+  useLayoutEffect(() => {
+    gsap.fromTo(
+      ".sobreMimText",
+      {
+        opacity: "0.1",
+        x: "-100%",
+      },
+      {
+        opacity: "1",
+        x: "0px",
+        paddingBottom: "2px",
+        scrollTrigger: {
+          trigger: ".sobreMimText",
+          start: "top 900px",
+          end: "bottom 900px",
+          scrub: true,
+          markers: true,
+        },
+      }
+    );
+  });
+  useLayoutEffect(() => {
+    gsap.fromTo(
+      ".sobreMimImage",
+      {
+        opacity: "0.1",
+        x: "100%",
+      },
+      {
+        opacity: "1",
+        x: "0px",
+        paddingBottom: "2px",
+        scrollTrigger: {
+          trigger: ".sobreMimText",
+          start: "top 900px",
+          end: "bottom 900px",
+          scrub: true,
+          markers: false,
+        },
+      }
+    );
+  });
+
+  return (
+    <div className="px-4 sm:px-8 md:px-16 lg:px-30">
+      {/* Seção Inicial */}
+      <div className="textoInicial flex items-center justify-center h-screen">
+        <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl">
+          Bem-Vindo!
+        </h1>
+      </div>
+
+      {/* Apresentação */}
+      <div className="flex items-center justify-center text-center">
+        <div className="textoApresentando">
+          <h1 className="text-xl sm:text-2xl md:text-3xl">
+            Olá, eu me chamo Peter
+          </h1>
+          <h1 className="text-xl sm:text-2xl md:text-3xl">
+            Atualmente Desenvolvedor Front-End Junior
+          </h1>
+          <h1 className="text-xl sm:text-2xl md:text-3xl">
+            Esse é o meu Portfólio, sinta-se livre para{" "}
+            <strong className="explorar text-yellow-200">Explorar</strong>
+          </h1>
         </div>
-      </main>
-      <footer className="row-start-3 flex gap-6 flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
+      </div>
+
+      {/* Sobre Mim */}
+      <div className="sobreMim text-center lg:text-center mt-96">
+        <strong className="text-2xl sm:text-3xl">Sobre mim</strong>
+      </div>
+      <div className="flex flex-col lg:flex-row justify-center items-center mt-28 ">
+        <div className="flex flex-col lg:flex-row justify-center items-center gap-6 lg:gap-11 mt-10 lg:mt-20 text-center lg:text-left">
+          <p className="sobreMimText max-w-lg">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. At incidunt
+            nostrum tenetur possimus! Quaerat nam nulla dignissimos deleniti
+            odio vero aspernatur voluptate. Doloribus, pariatur. Assumenda vero
+            similique optio praesentium repellat? Lorem, ipsum dolor sit amet
+            consectetur adipisicing elit. Temporibus dignissimos rem nostrum
+            ullam animi praesentium officiis doloribus, nemo ducimus iste
+            quibusdam reprehenderit vero? Aut impedit ipsa eveniet vitae debitis
+            reprehenderit.
+          </p>
           <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
+            className="sobreMimImage rounded-lg max-w-full h-auto"
+            src={foto_de_perfil_profissional}
+            width={300}
+            height={100}
+            alt="Foto de perfil profissional"
           />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
+        </div>
+      </div>
+      <div className="flex justify-center">
+        <h1 className="text-2xl text-blue-400 font-medium">Tecnologias</h1>
+      </div>
+      <Tecnologias />
     </div>
   );
 }
