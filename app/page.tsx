@@ -50,12 +50,16 @@ export default function Home() {
       ".explorar",
       {
         color: "red",
-        opacity: "0.3",
+        opacity: "0.5",
       },
       {
         color: "yellow",
         opacity: "1",
-        duration: 6,
+        duration: 3,
+        repeat: -1, 
+        yoyo: true, 
+        ease: "power1.inOut", 
+      
       }
     );
   });
@@ -94,8 +98,8 @@ export default function Home() {
         paddingBottom: "2px",
         scrollTrigger: {
           trigger: ".sobreMimText",
-          start: "top 900px",
-          end: "bottom 900px",
+          start: "top 700px",
+          end: "bottom 600px",
           scrub: true,
           markers: true,
         },
@@ -120,6 +124,22 @@ export default function Home() {
           scrub: true,
           markers: false,
         },
+      }
+    );
+  });
+
+  useLayoutEffect(() => {
+    gsap.fromTo(
+      ".tecnologias",
+      {
+        color: "#00E153",
+      },
+      {
+        color: "#008932",
+        duration: 1,
+        repeat: -1, 
+        yoyo: true, 
+        ease: "power1.inOut", 
       }
     );
   });
@@ -174,8 +194,10 @@ export default function Home() {
           />
         </div>
       </div>
-      <div className="flex justify-center">
-        <h1 className="text-2xl text-blue-400 font-medium">Tecnologias</h1>
+      <div className="flex justify-center mt-52">
+        <h1 className="tecnologias text-3xl text-blue-400 font-extralight">
+          Tecnologias
+        </h1>
       </div>
       <Tecnologias />
     </div>

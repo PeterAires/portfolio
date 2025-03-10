@@ -1,36 +1,61 @@
-import Next from "../public/next.svg";
+import { useEffect, useRef } from "react";
+import { gsap } from "gsap";
+import Image from "next/image";
+import { Card } from "./ui/card";
 import Vite from "../public/vite.svg";
 import Html from "../public/html5.svg";
 import Node from "../public/node.svg";
-import Prisma from "../public/prisma.svg";
-import { Card } from "./ui/card";
-import Image from "next/image";
-
-const tecnologias = [
-  { name: "Next.js", icon: Next },
-  { name: "Vite", icon: Vite },
-  { name: "HTML5", icon: Html },
-  { name: "Node.js", icon: Node },
-  { name: "Prisma", icon: Prisma },
-];
+import { AlertCircleIcon } from "lucide-react";
+import {
+  AlertDialog,
+  AlertDialogTitle,
+  AlertDialogTrigger,
+} from "@radix-ui/react-alert-dialog";
 
 export const Tecnologias = () => {
+  const containerRef = useRef<HTMLDivElement | null>(null);
+  const animationRef = useRef<gsap.core.Tween | null>(null);
+
+  useEffect(() => {
+    const container = containerRef.current;
+    if (!container) return;
+
+    animationRef.current = gsap.to(container, {
+      x: window.innerWidth,
+      duration: 30,
+      repeat: -1,
+      ease: "linear",
+      onRepeat: () => {
+        gsap.set(container, { x: "-100%" }); // Agora não retorna nada
+      },
+    });
+  }, []);
+
+  const handleMouseEnter = () => {
+    animationRef.current?.pause();
+  };
+
+  const handleMouseLeave = () => {
+    animationRef.current?.resume();
+  };
+
   return (
-    <div className=" flex justify-center ">
-      <Card className="card1 bg-transparent border-black p-4 w-32 h-36">
-        <Image src={Next} width={100} height={100} />
-      </Card>
-      <Card className="card2 bg-transparent border-black w-32">
-        <Image src={Vite} width={100} height={100} />
-      </Card>
+    <div
+      ref={containerRef}
+      className="models_content inline-flex mt-20 h-40 gap-x-4"
+      onMouseEnter={handleMouseEnter}
+      onMouseLeave={handleMouseLeave}
+    >
+      <div className="card2 bg-transparent border-black w-32 items-center">
+        <Image src={Vite} width={100} height={100} alt="" />
+      </div>
+
       <Card className="card3 bg-transparent border-black w-32">
-        <Image src={Html} width={100} height={100} />
+        <Image src={Html} width={100} height={100} alt="" />
       </Card>
+
       <Card className="card4 bg-transparent border-black w-32">
-        <Image src={Node} width={100} height={100} />
-      </Card>
-      <Card className="card5 bg-transparent border-black w-32">
-        <Image src={Prisma} width={100} height={100} />
+        <Image src={Node} width={100} height={100} alt="" />
       </Card>
     </div>
   );
