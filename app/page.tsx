@@ -5,7 +5,7 @@ import { useLayoutEffect } from "react";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import Image from "next/image";
 import foto_de_perfil_profissional from "./public/foto_de_perfil_profissional.jpg";
-import { Tecnologias } from "./components/Tecnologias";
+import { Tecnologias } from "./components/tecnologias/Tecnologias";
 
 export default function Home() {
   gsap.registerPlugin(ScrollTrigger);
@@ -132,10 +132,10 @@ export default function Home() {
     gsap.fromTo(
       ".tecnologias",
       {
-        color: "#00E153",
+        opacity: 0.8
       },
       {
-        color: "#008932",
+        opacity: 1,
         duration: 1,
         repeat: -1, 
         yoyo: true, 
@@ -170,7 +170,7 @@ export default function Home() {
       </div>
 
       {/* Sobre Mim */}
-      <div className="sobreMim text-center lg:text-center mt-96">
+      <div id="sobre" className="sobreMim text-center lg:text-center mt-96">
         <strong className="text-2xl sm:text-3xl">Sobre mim</strong>
       </div>
       <div className="flex flex-col lg:flex-row justify-center items-center mt-28 ">
@@ -195,7 +195,7 @@ export default function Home() {
         </div>
       </div>
       <div className="flex justify-center mt-52">
-        <h1 className="tecnologias text-3xl text-blue-400 font-extralight">
+        <h1 className="tecnologias text-3xl  font-black">
           Tecnologias
         </h1>
       </div>

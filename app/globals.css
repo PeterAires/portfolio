@@ -8,6 +8,10 @@
   color: white;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 @font-face {
   font-family: 'fonte_tecnologica';
   src: url('/app/public/fonts/quantum_4/Quantum.otf');
