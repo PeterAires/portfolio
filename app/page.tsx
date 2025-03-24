@@ -6,6 +6,7 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 import Image from "next/image";
 import foto_de_perfil_profissional from "./public/foto_de_perfil_profissional.jpg";
 import { Tecnologias } from "./components/tecnologias/Tecnologias";
+import Projetos from "./components/Projetos";
 
 export default function Home() {
   gsap.registerPlugin(ScrollTrigger);
@@ -101,7 +102,7 @@ export default function Home() {
           start: "top 700px",
           end: "bottom 600px",
           scrub: true,
-          markers: true,
+          markers: false,
         },
       }
     );
@@ -200,6 +201,11 @@ export default function Home() {
         </h1>
       </div>
       <Tecnologias />
+      <div className="flex justify-center mt-52">
+
+        
+        <Projetos/>
+      </div>
     </div>
   );
 }

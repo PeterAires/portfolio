@@ -1,43 +1,54 @@
-import { useEffect, useRef } from "react";
+import { useLayoutEffect } from "react";
 import { gsap } from "gsap";
 
-import Vite from "./components/Vite";
-import Html from "./components/Html";
-import Node from "./components/Node";
+import Vite from "./_components/Vite";
+import Html from "./_components/Html";
+import Node from "./_components/Node";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+import ReactImage from "./_components/React";
+import PrismaImage from "./_components/Prisma";
+import TypeScriptIcon from "./_components/Typescript";
+import ReactNativeImage from "./_components/React_Native";
+
 export const Tecnologias = () => {
-  const containerRef = useRef<HTMLDivElement | null>(null);
-  const animationRef = useRef<gsap.core.Tween | null>(null);
+  gsap.registerPlugin(ScrollTrigger);
 
-  useEffect(() => {
-    const container = containerRef.current;
-    if (!container) return;
+  useLayoutEffect(() => {
+    gsap.fromTo(
+      ".tecnologiasImage",
+      {
+        opacity: "0.1",
+        y: "500px",
+      },
+      {
+        opacity: "1",
+        y: "0px",
 
-    animationRef.current = gsap.to(container, {
-      x: window.innerWidth,
-      duration: 30,
-      repeat: -1,
-      ease: "linear",
-    });
-  }, []);
-
-  const handleMouseEnter = () => {
-    animationRef.current?.pause();
-  };
-
-  const handleMouseLeave = () => {
-    animationRef.current?.resume();
-  };
+        backgroundColor: "2px",
+        scrollTrigger: {
+          trigger: ".tecnologias",
+          start: "top 700px",
+          end: "bottom 400px",
+          scrub: true,
+          markers: true,
+        },
+      }
+    );
+  });
 
   return (
-    <div
-      ref={containerRef}
-      className=" inline-flex mt-20 h-20 gap-x-4"
-      onMouseEnter={handleMouseEnter}
-      onMouseLeave={handleMouseLeave}
-    >
-      <Vite />
-      <Html />
-      <Node />
+    <div className="tecnologiasImage mt-20 justify-center ">
+      <p className=" justify-center flex font-medium text-zinc-500">Tente clicar...</p>
+      <div className="flex justify-center mt-4">
+        <Vite />
+        <Html />
+        <Node />
+        <ReactImage />
+        <PrismaImage />
+        <TypeScriptIcon />
+        <ReactNativeImage />
+      </div>
+     
     </div>
   );
 };
