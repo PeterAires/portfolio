@@ -12,7 +12,7 @@ const PrismaImage = () => {
       <DialogContent className="bg-transparent">
         <DialogHeader className="bg-transparent">
           <DialogTitle className="bg-transparent">Prisma</DialogTitle>
-          <DialogDescription className="bg-transparent">
+          <DialogDescription className="bg-transparent text-white">
             This action cannot be undone. This will permanently delete your
             account and remove your data from our servers.
           </DialogDescription>

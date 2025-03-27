@@ -1,7 +1,13 @@
 import Image from "next/image";
 import HtmlImage from "../../../public/html5.svg";
-import { Dialog ,DialogHeader, DialogTrigger, DialogContent, DialogTitle, DialogDescription } from "../../ui/dialog";
-
+import {
+  Dialog,
+  DialogHeader,
+  DialogTrigger,
+  DialogContent,
+  DialogTitle,
+  DialogDescription,
+} from "../../ui/dialog";
 
 const Html = () => {
   return (
@@ -12,9 +18,9 @@ const Html = () => {
       <DialogContent className="bg-transparent">
         <DialogHeader className="bg-transparent">
           <DialogTitle className="bg-transparent">Html</DialogTitle>
-          <DialogDescription className="bg-transparent">
-            This action cannot be undone. This will permanently delete your
-            account and remove your data from our servers.
+          <DialogDescription className="bg-transparent text-white">
+            A linguagem base da web, usada para estruturar páginas. Com o HTML5,
+            é possível criar elementos interativos e semânticos.
           </DialogDescription>
         </DialogHeader>
       </DialogContent>

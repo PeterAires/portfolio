@@ -1,7 +1,13 @@
 import Image from "next/image";
 import NodeImage from "../../../public/node.svg";
-import { Dialog ,DialogHeader, DialogTrigger, DialogContent, DialogTitle, DialogDescription } from "../../ui/dialog";
-
+import {
+  Dialog,
+  DialogHeader,
+  DialogTrigger,
+  DialogContent,
+  DialogTitle,
+  DialogDescription,
+} from "../../ui/dialog";
 
 const Node = () => {
   return (
@@ -12,9 +18,9 @@ const Node = () => {
       <DialogContent className="bg-transparent">
         <DialogHeader className="bg-transparent">
           <DialogTitle className="bg-transparent">Node</DialogTitle>
-          <DialogDescription className="bg-transparent">
-            This action cannot be undone. This will permanently delete your
-            account and remove your data from our servers.
+          <DialogDescription className="bg-transparent text-white">
+            Um ambiente de execução para JavaScript no backend, permitindo criar
+            servidores, APIs e aplicações escaláveis.
           </DialogDescription>
         </DialogHeader>
       </DialogContent>

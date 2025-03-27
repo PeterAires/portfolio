@@ -1,7 +1,13 @@
 import Image from "next/image";
 import ViteImage from "../../../public/vite.svg";
-import { Dialog ,DialogHeader, DialogTrigger, DialogContent, DialogTitle, DialogDescription } from "../../ui/dialog";
-
+import {
+  Dialog,
+  DialogHeader,
+  DialogTrigger,
+  DialogContent,
+  DialogTitle,
+  DialogDescription,
+} from "../../ui/dialog";
 
 const Vite = () => {
   return (
@@ -12,9 +18,10 @@ const Vite = () => {
       <DialogContent className="bg-transparent">
         <DialogHeader className="bg-transparent">
           <DialogTitle className="bg-transparent">Vite</DialogTitle>
-          <DialogDescription className="bg-transparent">
-            This action cannot be undone. This will permanently delete your
-            account and remove your data from oViter servers.
+          <DialogDescription className="bg-transparent text-white">
+            Um bundler moderno e super rápido para projetos JavaScript e
+            TypeScript. Ele melhora o tempo de desenvolvimento e recarrega a
+            página quase instantaneamente.
           </DialogDescription>
         </DialogHeader>
       </DialogContent>

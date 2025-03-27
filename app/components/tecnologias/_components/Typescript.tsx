@@ -1,7 +1,13 @@
 import Image from "next/image";
 import TypeScript from "../../../public/typescript_icon.png";
-import { Dialog ,DialogHeader, DialogTrigger, DialogContent, DialogTitle, DialogDescription } from "../../ui/dialog";
-
+import {
+  Dialog,
+  DialogHeader,
+  DialogTrigger,
+  DialogContent,
+  DialogTitle,
+  DialogDescription,
+} from "../../ui/dialog";
 
 const TypeScriptIcon = () => {
   return (
@@ -12,9 +18,9 @@ const TypeScriptIcon = () => {
       <DialogContent className="bg-transparent">
         <DialogHeader className="bg-transparent">
           <DialogTitle className="bg-transparent">TypeScript</DialogTitle>
-          <DialogDescription className="bg-transparent">
-            This action cannot be undone. This will permanently delete your
-            account and remove your data from our servers.
+          <DialogDescription className="bg-transparent text-white">
+            Uma linguagem que adiciona tipagem estática ao JavaScript, tornando
+            o código mais seguro e escalável.
           </DialogDescription>
         </DialogHeader>
       </DialogContent>

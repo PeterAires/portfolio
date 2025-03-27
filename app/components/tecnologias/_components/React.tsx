@@ -1,7 +1,13 @@
 import Image from "next/image";
 import React from "../../../public/React-icon.svg.png";
-import { Dialog ,DialogHeader, DialogTrigger, DialogContent, DialogTitle, DialogDescription } from "../../ui/dialog";
-
+import {
+  Dialog,
+  DialogHeader,
+  DialogTrigger,
+  DialogContent,
+  DialogTitle,
+  DialogDescription,
+} from "../../ui/dialog";
 
 const ReactImage = () => {
   return (
@@ -12,9 +18,9 @@ const ReactImage = () => {
       <DialogContent className="bg-transparent">
         <DialogHeader className="bg-transparent">
           <DialogTitle className="bg-transparent">React</DialogTitle>
-          <DialogDescription className="bg-transparent">
-            This action cannot be undone. This will permanently delete your
-            account and remove your data from our servers.
+          <DialogDescription className="bg-transparent text-white">
+            Uma biblioteca JavaScript para construir interfaces de usuário
+            reativas e dinâmicas de forma eficiente.
           </DialogDescription>
         </DialogHeader>
       </DialogContent>

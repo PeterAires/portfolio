@@ -11,7 +11,7 @@ import Image from "next/image";
 
 const Projetos = () => {
   return (
-    <div>
+    <div className="mt-32">
       <div className="mb-32">
         <h1 className="tecnologias text-3xl  font-black">Projetos</h1>
       </div>

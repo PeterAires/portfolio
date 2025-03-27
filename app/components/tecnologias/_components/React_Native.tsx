@@ -1,7 +1,13 @@
 import Image from "next/image";
 import ReactNative from "../../../public/react_native.svg";
-import { Dialog ,DialogHeader, DialogTrigger, DialogContent, DialogTitle, DialogDescription } from "../../ui/dialog";
-
+import {
+  Dialog,
+  DialogHeader,
+  DialogTrigger,
+  DialogContent,
+  DialogTitle,
+  DialogDescription,
+} from "../../ui/dialog";
 
 const ReactNativeImage = () => {
   return (
@@ -12,9 +18,9 @@ const ReactNativeImage = () => {
       <DialogContent className="bg-transparent">
         <DialogHeader className="bg-transparent">
           <DialogTitle className="bg-transparent">ReactNative</DialogTitle>
-          <DialogDescription className="bg-transparent">
-            This action cannot be undone. This will permanently delete your
-            account and remove your data from our servers.
+          <DialogDescription className="bg-transparent text-white">
+            Um framework baseado em React para desenvolver aplicativos móveis
+            nativos para Android e iOS usando JavaScript.
           </DialogDescription>
         </DialogHeader>
       </DialogContent>
