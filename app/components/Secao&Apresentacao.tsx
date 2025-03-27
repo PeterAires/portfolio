@@ -37,7 +37,7 @@ const SecaoEApresentacao = () => {
         scrollTrigger: {
           trigger: ".textoApresentando",
           start: "top 80%", // Ativa quando o topo da seção chega a 80% da tela
-          end: "top 50%", // Termina quando o topo está no meio da tela
+          end: "top 20%", // Termina quando o topo está no meio da tela
           scrub: true,
           markers: false,
         },
@@ -90,7 +90,7 @@ const SecaoEApresentacao = () => {
       <div className="w-full h-[2px] bg-white "></div>
 
       {/* Apresentação */}
-      <div className="flex items-center justify-center text-center mt-32 pb-32">
+      <div className="flex items-center justify-center text-center mt-32 ">
         <div className="textoApresentando">
           <h1 className="text-xl sm:text-2xl md:text-3xl">
             Olá, eu me chamo Peter

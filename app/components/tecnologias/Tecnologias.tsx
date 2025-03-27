@@ -1,10 +1,10 @@
 import { useLayoutEffect } from "react";
 import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 import Vite from "./_components/Vite";
 import Html from "./_components/Html";
 import Node from "./_components/Node";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
 import ReactImage from "./_components/React";
 import PrismaImage from "./_components/Prisma";
 import TypeScriptIcon from "./_components/Typescript";
@@ -15,63 +15,47 @@ export const Tecnologias = () => {
 
   useLayoutEffect(() => {
     gsap.fromTo(
-      ".tecnologias",
-      {
-        opacity: 0.8,
-      },
+      ".pulse",
+      { opacity: 0, scale: 0.5 }, // Começa pequeno e invisível
       {
         opacity: 1,
+        scale: 1,
         duration: 1,
-        repeat: -1,
-        yoyo: true,
-        ease: "power1.inOut",
-      }
-    );
-  });
 
-  useLayoutEffect(() => {
-    gsap.fromTo(
-      ".tecnologiasImage",
-      {
-        opacity: "0.1",
-        y: "500px",
-      },
-      {
-        opacity: "1",
-        y: "0px",
-
-        backgroundColor: "2px",
+        stagger: 0.1, // Faz os elementos surgirem em sequência
         scrollTrigger: {
-          trigger: ".tecnologias",
-          start: "top 700px",
-          end: "bottom 400px",
+          trigger: ".pulse-container",
+          start: "top 85%",
+          end: "bottom 70%",
           scrub: true,
-          markers: false,
         },
       }
     );
-  });
+  }, []);
 
   return (
-    <div className="mt-72">
-      <div>
-        <div className="flex justify-center">
-          <h1 className="tecnologias text-3xl  font-black">Tecnologidas</h1>
-        </div>
+    <div className="mt-72 pulse-container">
+      {/* Título */}
+      <div className="flex justify-center">
+        <h1 className="pulse text-3xl font-black">Tecnologias</h1>
       </div>
-      <div className="tecnologiasImage mt-20 justify-center ">
-        <p className=" justify-center flex font-medium text-zinc-500">
+
+      {/* Subtítulo */}
+      <div className="mt-10">
+        <p className="pulse justify-center flex font-medium text-zinc-500">
           Tente clicar...
         </p>
-        <div className="flex justify-center mt-4">
-          <Vite />
-          <Html />
-          <Node />
-          <ReactImage />
-          <PrismaImage />
-          <TypeScriptIcon />
-          <ReactNativeImage />
-        </div>
+      </div>
+
+      {/* Ícones das Tecnologias */}
+      <div className="pulse mt-6 grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-7 gap-4 justify-items-center">
+        <Vite />
+        <Html />
+        <Node />
+        <ReactImage />
+        <PrismaImage />
+        <TypeScriptIcon />
+        <ReactNativeImage />
       </div>
     </div>
   );

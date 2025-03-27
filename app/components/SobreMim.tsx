@@ -7,83 +7,69 @@ function SobreMim() {
   useLayoutEffect(() => {
     gsap.fromTo(
       ".sobreMim",
+      { opacity: 0, x: 100 },
       {
-        opacity: "0.1",
-        x: "100%",
-      },
-      {
-        opacity: "1",
-        x: "0px",
-        paddingBottom: "2px",
+        opacity: 1,
+        x: 0,
+        duration: 1.5,
+        ease: "power2.out",
         scrollTrigger: {
           trigger: ".sobreMim",
-          start: "top 800px",
-          end: "bottom 500px",
-          scrub: true,
-          markers: false,
+          start: "top 90%",
+          end: "top 60%",
+          scrub: 0.5,
         },
       }
     );
-  });
+  }, []);
+
   useLayoutEffect(() => {
     gsap.fromTo(
       ".sobreMimText",
+      { opacity: 0, x: -100 },
       {
-        opacity: "0.1",
-        x: "-100%",
-      },
-      {
-        opacity: "1",
-        x: "0px",
-        paddingBottom: "2px",
+        opacity: 1,
+        x: 0,
+        duration: 1.8,
+        ease: "power2.out",
         scrollTrigger: {
           trigger: ".sobreMimText",
-          start: "top 700px",
-          end: "bottom 600px",
-          scrub: true,
-          markers: false,
+          start: "top 95%",
+          end: "top 65%",
+          scrub: 0.5,
         },
       }
     );
-  });
+  }, []);
+
   useLayoutEffect(() => {
     gsap.fromTo(
       ".sobreMimImage",
+      { opacity: 0, scale: 0.8 },
       {
-        opacity: "0.1",
-        x: "100%",
-      },
-      {
-        opacity: "1",
-        x: "0px",
-        paddingBottom: "2px",
+        opacity: 1,
+        scale: 1,
+        duration: 1.5,
+        ease: "power2.out",
         scrollTrigger: {
           trigger: ".sobreMimText",
-          start: "top 900px",
-          end: "bottom 900px",
-          scrub: true,
-          markers: false,
+          start: "top 90%",
+          end: "top 60%",
+          scrub: 0.5,
         },
       }
     );
-  });
+  }, []);
 
   return (
-    <div className="mt-96">
-      <div id="sobre" className="sobreMim text-center lg:text-center  ">
+    <div className="mt-[700px] overflow-hidden">
+      <div id="sobre" className="sobreMim text-center">
         <strong className="text-2xl sm:text-3xl">Sobre mim</strong>
       </div>
-      <div className="flex flex-col lg:flex-row justify-center items-center mt-10 ">
+      <div className="flex flex-col lg:flex-row justify-center items-center mt-10">
         <div className="flex flex-col lg:flex-row justify-center items-center gap-6 lg:gap-11 mt-10 lg:mt-20 text-center lg:text-left">
           <p className="sobreMimText max-w-lg">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. At incidunt
-            nostrum tenetur possimus! Quaerat nam nulla dignissimos deleniti
-            odio vero aspernatur voluptate. Doloribus, pariatur. Assumenda vero
-            similique optio praesentium repellat? Lorem, ipsum dolor sit amet
-            consectetur adipisicing elit. Temporibus dignissimos rem nostrum
-            ullam animi praesentium officiis doloribus, nemo ducimus iste
-            quibusdam reprehenderit vero? Aut impedit ipsa eveniet vitae debitis
-            reprehenderit.
+            Lorem ipsum dolor sit amet consectetur adipisicing elit...
           </p>
           <Image
             className="sobreMimImage rounded-lg max-w-full h-auto"
