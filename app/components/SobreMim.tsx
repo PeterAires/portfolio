@@ -68,9 +68,16 @@ function SobreMim() {
       </div>
       <div className="flex flex-col lg:flex-row justify-center items-center mt-10">
         <div className="flex flex-col lg:flex-row justify-center items-center gap-6 lg:gap-11 mt-10 lg:mt-20 text-center lg:text-left">
-          <p className="sobreMimText max-w-lg">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit...
+          <p className="sobreMimText max-w-lg leading-snug text-justify">
+            Sempre fui apaixonado por tecnologia e por tudo que ela pode
+            proporcionar. Estudei em um colégio militar, onde aprendi a ter
+            disciplina e organização, e hoje estou cursando Técnico em
+            Desenvolvimento de Sistemas. Além dos estudos, já trabalhei como
+            freelancer, ganhando experiência em projetos reais e aprimorando
+            minhas habilidades. Gosto de estar sempre aprendendo e buscando
+            novas soluções.
           </p>
+
           <Image
             className="sobreMimImage rounded-lg max-w-full h-auto"
             src={foto_de_perfil_profissional}

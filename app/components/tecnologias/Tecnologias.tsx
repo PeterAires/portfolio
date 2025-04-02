@@ -9,6 +9,7 @@ import ReactImage from "./_components/React";
 import PrismaImage from "./_components/Prisma";
 import TypeScriptIcon from "./_components/Typescript";
 import ReactNativeImage from "./_components/React_Native";
+import NextLogo from "./_components/Next";
 
 export const Tecnologias = () => {
   gsap.registerPlugin(ScrollTrigger);
@@ -56,6 +57,7 @@ export const Tecnologias = () => {
         <PrismaImage />
         <TypeScriptIcon />
         <ReactNativeImage />
+        <NextLogo/>
       </div>
     </div>
   );

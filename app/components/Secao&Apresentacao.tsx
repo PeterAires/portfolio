@@ -65,7 +65,7 @@ const SecaoEApresentacao = () => {
   }, []); // Adicionar dependência vazia
 
   return (
-    <div className="relative w-full h-screen over">
+    <div className="relative w-full h-screen over over">
       {/* Vídeo de fundo */}
       <video
         autoPlay
@@ -81,13 +81,18 @@ const SecaoEApresentacao = () => {
 
       {/* Texto Inicial */}
       <span className="textoInicial flex items-center justify-center h-screen bg-transparent">
-        <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl bg-transparent">
+        <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl bg-transparent font-bold" style={{ color: "rgb(var(--texto-inicial))" }}>
           Bem-Vindo!
         </h1>
       </span>
 
       {/* Linha Branca */}
-      <div className="w-full h-[2px] bg-white mt-2"></div>
+      <div
+        className="w-full h-[2px] mt-2"
+        style={{
+          backgroundColor: ` rgb(var(--borda-invertida)) `,
+        }}
+      ></div>
 
       {/* Apresentação */}
       <div className="flex items-center justify-center text-center mt-32 ">

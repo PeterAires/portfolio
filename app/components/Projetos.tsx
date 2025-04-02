@@ -66,12 +66,21 @@ const Projetos = () => {
       <div className="carrosel relative">
         <Carousel>
           <CarouselContent>
-            <CarouselItem className="carousel-item flex justify-center">
-              Full-Stack-Barbearia
-              <Image src={fswBarber} width={300} height={100} alt="fswBarber" />
+            <CarouselItem className="carousel-item flex flex-col items-center">
+              <p className="font-bold">Full-Stack-Barbearia</p>
+              <a
+                target="_blank"
+                href="https://full-stack-barbearia-sigma.vercel.app/"
+              >
+                {" "}
+                <Image
+                  src={fswBarber}
+                  width={300}
+                  height={100}
+                  alt="fswBarber"
+                />
+              </a>
             </CarouselItem>
-            <CarouselItem className="carousel-item">...</CarouselItem>
-            <CarouselItem className="carousel-item">...</CarouselItem>
           </CarouselContent>
           <CarouselPrevious className="bg-transparent" />
           <CarouselNext className="bg-transparent" />

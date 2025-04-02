@@ -5,7 +5,7 @@ import { useEffect, useState } from "react";
 import { Switch } from "@/app/components/ui/switch";
 
 function Rodape() {
-  const {  setTheme, resolvedTheme } = useTheme();
+  const { setTheme, resolvedTheme } = useTheme();
   const [mounted, setMounted] = useState(false);
 
   useEffect(() => {
@@ -16,18 +16,37 @@ function Rodape() {
   if (!mounted) return null;
 
   return (
-    <div className="fixed left-0 w-full pt-2 px-4 shadow-md z-50 bg-inherit text-foreground">
+    <div
+      className="fixed left-0 w-full pt-2 px-4 shadow-md z-50 i text-foreground"
+      style={{
+        backgroundColor: "rgb(var(--background))",
+        color: "rgb(var(--foreground))",
+      }}
+    >
       <div className="flex justify-between items-center">
         <div className="flex gap-6 md:gap-10 items-center">
-          <a href="#sobre" className="xl:text-2xl md:text-xl text-sm">Sobre mim</a>
-          <a href="#tecnologias" className="xl:text-2xl md:text-xl text-sm">Tecnologias</a>
-          <a href="#projetos" className="xl:text-2xl md:text-xl text-sm">Projetos</a>
-          <a href="#contato" className="xl:text-2xl md:text-xl text-sm">Contato</a>
+          <a href="#sobre" className="xl:text-2xl md:text-xl text-sm">
+            Sobre mim
+          </a>
+          <a href="#tecnologias" className="xl:text-2xl md:text-xl text-sm">
+            Tecnologias
+          </a>
+          <a href="#projetos" className="xl:text-2xl md:text-xl text-sm">
+            Projetos
+          </a>
+          <a href="#contato" className="xl:text-2xl md:text-xl text-sm">
+            Contato
+          </a>
         </div>
-        <div className="mt-1">
-          <Switch 
-            checked={resolvedTheme === "dark"} 
-            onCheckedChange={() => setTheme(resolvedTheme === "dark" ? "light" : "dark")} 
+        <div
+          className="mt-1 rounded-full text-pink-500"
+          style={{ backgroundColor: "rgb(var(--switch))" }}
+        >
+          <Switch
+            checked={resolvedTheme === "dark"}
+            onCheckedChange={() =>
+              setTheme(resolvedTheme === "dark" ? "light" : "dark")
+            }
           />
         </div>
       </div>

@@ -17,15 +17,20 @@ html {
   :root {
     --background: 245, 245, 245; /* Branco mais suave e menos agressivo */
     --foreground: 30, 30, 30; /* Texto escuro para um bom contraste */
+    --texto-inicial: 255, 255, 255; 
+    --borda-invertida: 0, 0, 0;
+    --switch: 0, 0, 0
   }
 
   .dark {
     --background: 10, 0, 28; /* Escuro (mantendo sua cor #0A001C) */
     --foreground: 255, 255, 255;
-    --bordinha: 245, 245, 245
+    --texto-inicial: 255, 255, 255;
+    --borda-invertida: 255, 255, 255;
+    --switch: 255, 255, 255;
   }
-/* para alterar a cor de fundo do codigo */
-  body { 
-    @apply bg-[rgb(var(--background))] text-[rgb(var(--foreground))];
+
+  body {     
+    overflow-x: hidden;
   }
 }
