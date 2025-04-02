@@ -125,6 +125,7 @@ export default function Contato() {
 
   return (
     <div
+    id="contato"
       ref={contatosRef}
       className="mt-[300px] flex flex-col items-center gap-8 px-6 md:px-12"
     >
