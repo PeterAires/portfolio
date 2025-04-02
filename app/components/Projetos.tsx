@@ -55,7 +55,7 @@ const Projetos = () => {
   }, []);
 
   return (
-    <div className="mt-32">
+    <div id="projetos" className="mt-32">
       <div className="mb-32">
         <h1 className="titulo-projetos text-3xl font-black justify-center flex">
           Projetos

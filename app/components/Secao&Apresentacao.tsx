@@ -87,7 +87,7 @@ const SecaoEApresentacao = () => {
       </span>
 
       {/* Linha Branca */}
-      <div className="w-full h-[2px] bg-white "></div>
+      <div className="w-full h-[2px] bg-white mt-2"></div>
 
       {/* Apresentação */}
       <div className="flex items-center justify-center text-center mt-32 ">

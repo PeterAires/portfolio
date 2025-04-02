@@ -34,7 +34,7 @@ export const Tecnologias = () => {
   }, []);
 
   return (
-    <div className="mt-72 pulse-container">
+    <div  id="tecnologias" className="mt-72 pulse-container">
       {/* Título */}
       <div className="flex justify-center">
         <h1 className="pulse text-3xl font-black">Tecnologias</h1>
