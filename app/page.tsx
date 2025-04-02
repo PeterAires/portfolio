@@ -3,6 +3,7 @@ import { Tecnologias } from "./components/tecnologias/Tecnologias";
 import Projetos from "./components/Projetos";
 import SecaoEApresentacao from "./components/Secao&Apresentacao";
 import SobreMim from "./components/SobreMim";
+import Contato from "./components/Contato";
 
 export default function Home() {
   return (
@@ -21,7 +22,11 @@ export default function Home() {
           {/* Projetos */}
           <Projetos />
         </div>
+        <Contato/>
       </div>
-    </div>
+      <div className="flex justify-center items-center mt-20">
+        <p className="gont font-extralight text-zinc-500">Espero que tenha gostado, sinta-se livre para dar sugestões...</p>
+        </div>
+      </div>
   );
 }

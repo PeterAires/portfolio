@@ -4,6 +4,7 @@ import { Geist, Geist_Mono } from "next/font/google";
 import { ThemeProvider } from "next-themes";
 import "./globals.css";
 import Rodape from "./components/Rodape";
+import { Toaster } from "sonner";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -27,10 +28,11 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <body className={`${geistSans.variable} ${geistMono.variable} antialiased`} style={{ backgroundColor: "rgb(var(--background))" }}>
+      <body className={`${geistSans.variable} ${geistMono.variable} antialiased bg-[rgb(var(--background))]`} >
         <ThemeProvider attribute="class" defaultTheme="dark" enableSystem>
           <Rodape />
           {children}
+          <Toaster/>
         </ThemeProvider>
       </body>
     </html>

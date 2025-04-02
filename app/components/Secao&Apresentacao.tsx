@@ -77,11 +77,14 @@ const SecaoEApresentacao = () => {
       </video>
 
       {/* Overlay escuro */}
-      <div className="absolute inset-0 bg-black/80"></div>
+      <div className="absolute inset-0 bg-black/50"></div>
 
       {/* Texto Inicial */}
       <span className="textoInicial flex items-center justify-center h-screen bg-transparent">
-        <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl bg-transparent font-bold" style={{ color: "rgb(var(--texto-inicial))" }}>
+        <h1
+          className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl bg-transparent font-bold"
+          style={{ color: "rgb(var(--texto-inicial))" }}
+        >
           Bem-Vindo!
         </h1>
       </span>
@@ -90,7 +93,7 @@ const SecaoEApresentacao = () => {
       <div
         className="w-full h-[2px] mt-2"
         style={{
-          backgroundColor: ` rgb(var(--borda-invertida)) `,
+          backgroundColor: " rgb(var(--borda-invertida)) ",
         }}
       ></div>
 
